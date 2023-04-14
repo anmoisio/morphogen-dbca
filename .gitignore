@@ -1,0 +1,11 @@
+log
+*.pkl
+*.tar.gz
+*.zip
+__init__.py
+test/test-files
+
+# external tools
+Turku-neural-parser-pipeline
+conllu
+OpusFilter
