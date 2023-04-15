@@ -1,0 +1,37 @@
+common:
+  output_directory: exp/full-d/data
+  chunksize: 600000
+
+steps:
+  - type: filter
+    parameters:
+      inputs: [sents.fi.gz, sents.en.gz]
+      outputs: [filtered.fi.gz, filtered.en.gz]
+      filters:
+        - LengthFilter:
+            unit: word
+            min_length: 1
+            max_length: 100
+
+        - LengthRatioFilter:
+            unit: word
+            threshold: 3
+
+        - LengthRatioFilter:
+            unit: char
+            threshold: 2
+
+        - LongWordFilter:
+            threshold: 20
+
+        - CharacterScoreFilter:
+            scripts: [Latin, Latin]
+            thresholds: [1, 1]
+
+        - TerminalPunctuationFilter: {}
+
+        - NonZeroNumeralsFilter: {}
+
+        - HtmlTagFilter: {}
+
+        - AlphabetRatioFilter: {}
