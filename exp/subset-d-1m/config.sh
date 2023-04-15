@@ -21,7 +21,7 @@ print_every="1000"
 
 # sentencepiece
 character_coverage="1.0"
-model_type="bpe"
+tok_method="bpe"
 spm_trainset_size="1000000"
 
 # NMT
