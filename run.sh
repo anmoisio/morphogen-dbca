@@ -2,22 +2,22 @@
 
 # Experiment name
 exp="subset-d-1m"
-# The confguration file is placed in exp/<exp_name>/config.sh
+# The confguration file is placed in exp/$exp/config.sh
 
 
 ############################################
 # Select the subcorpora of Opus that we want to use
-sbatch 01-select-corpora.sh "$exp_name"
+sbatch 01-select-corpora.sh "$exp"
 
 
 ############################################
 # Filter OPUS data with OPUSFilter
-sbatch 02-opusfilter.sh exp/${exp_name}/opusfilter.yaml
+sbatch 02-opusfilter.sh exp/$exp/opusfilter.yaml
 
 
 ############################################
 # Generate morphological tags
-for input_file in exp/${exp_name}/data/filtered_*.fi.ids.gz;  do
+for input_file in exp/$exp/data/filtered_*.fi.ids.gz;  do
     if [ -f ${input_file%.gz}.parsed ]; then
         continue
     fi
