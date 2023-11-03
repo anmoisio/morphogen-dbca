@@ -1,5 +1,7 @@
 ## Code and data for the paper "[Evaluating Morphological Generalisation in Machine Translation by Distribution-Based Compositionality Assessment](https://openreview.net/forum?id=1sGdp5g0NP)"
 
+Note: for updates, see https://github.com/aalto-speech/dbca
+
 ### Structure
 * scripts numbered 01-13 are meant to be run in succession 
 * [run.sh](run.sh) provides examples of running the scripts
